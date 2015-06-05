@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h2>Blog Of MESRURE BETÜL KAPLAN</h2>
+    <p class="lead">This blog was built for Term Poroject of Ceng11</p>
+
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Software</h2>
+        <p>Let's discovery news and innnovations about Techonology.....</p>
+        <p><a class="btn btn-default" href="http://mashable.com/tech/">Learn more &raquo;</a></p>
+    </div>
+
+    <div class="col-md-4">
+        
+    </div>
+    
+    <div class="col-md-4">
+        <h2>Programming</h2>
+        <p>About Programming and Software!</p>
+        <p><a class="btn btn-default" href="http://mashable.com/apps-software/">Learn more &raquo;</a></p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+
+    </div>
+
+    <div class="col-md-4">
+        @{  var imagePath = "";
+          if (Request["photoChoice"] != null)
+          {
+              imagePath = @"~\DeveloperImages\" + Request["photoChoice"];
+          }
+        }
+
+        <h2>Developer Types</h2>
+        <form method="post" action="">
+            <div>
+                I want to see:
+                <select name="photoChoice">
+                    <option value="sd.jpg">Software Developer</option>
+                    <option value="wd.jpg">Web Developer</option>
+                    <option value="md.jpg">Mobile Developer</option>
+                    <option value="gd.jpg">Game Developer</option>
+                </select>
+                &nbsp;
+                <input type="submit" value="SHOW" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+        <div style="padding:10px;">
+            @if (imagePath != "")
+            {
+                <img src="@Url.Content(imagePath)" alt="Developer Types" width="1200" height="500" />
+            }
+        </div>
+</div>
+
+
+
+
+   
+
+
+
+
+
